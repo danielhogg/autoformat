@@ -1,11 +1,10 @@
 import math
 import datetime
 
-import pytest
 import matplotlib.pyplot as plt
 import numpy as np
 
-import autoformat
+from autoformat import autoformat
 
 
 class SampleData:
@@ -56,29 +55,29 @@ def test_time_period(time_span, filename):
 
 
 def test_all():
-    test_time_period(datetime.timedelta(seconds=60), "../tests/0_1min.png")
-    test_time_period(datetime.timedelta(seconds=60*30), "../tests/1_30min.png")
-    test_time_period(datetime.timedelta(seconds=60*60), "../tests/2_1hour.png")
-    test_time_period(datetime.timedelta(seconds=60*60*3), "../tests/3_3hour.png")
-    test_time_period(datetime.timedelta(seconds=60*60*6), "../tests/4_6hour.png")
-    test_time_period(datetime.timedelta(seconds=60*60*12), "../tests/5_12hour.png")
-    test_time_period(datetime.timedelta(seconds=60*60*24), "../tests/6_24hour.png")
-    test_time_period(datetime.timedelta(days=3), "../tests/7_3day.png")
-    test_time_period(datetime.timedelta(days=7), "../tests/8_7day.png")
-    test_time_period(datetime.timedelta(days=14), "../tests/9_14day.png")
-    test_time_period(datetime.timedelta(days=30), "../tests/10_30day.png")
-    test_time_period(datetime.timedelta(days=30*3), "../tests/11_3month.png")
-    test_time_period(datetime.timedelta(days=30*6), "../tests/12_6month.png")
-    test_time_period(datetime.timedelta(days=365), "../tests/13_1year.png")
-    test_time_period(datetime.timedelta(days=365*3), "../tests/14_3year.png")
-    test_time_period(datetime.timedelta(days=365*5), "../tests/15_5year.png")
-    test_time_period(datetime.timedelta(days=365*10), "../tests/16_10year.png")
-    test_time_period(datetime.timedelta(days=365*25), "../tests/17_25year.png")
-    test_time_period(datetime.timedelta(days=365*50), "../tests/18_50year.png")
-    test_time_period(datetime.timedelta(days=365*100), "../tests/19_100year.png")
-    test_time_period(datetime.timedelta(days=365*250), "../tests/20_250year.png")
-    test_time_period(datetime.timedelta(days=365*500), "../tests/21_500year.png")
-    test_time_period(datetime.timedelta(days=365*1000), "../tests/22_1000year.png")
-    test_time_period(datetime.timedelta(days=365*3000), "../tests/23_3000year.png")
+    test_time_period(datetime.timedelta(seconds=60), "0_1min.png")
+    test_time_period(datetime.timedelta(seconds=60*30), "1_30min.png")
+    test_time_period(datetime.timedelta(seconds=60*60), "2_1hour.png")
+    test_time_period(datetime.timedelta(seconds=60*60*3), "3_3hour.png")
+    test_time_period(datetime.timedelta(seconds=60*60*6), "4_6hour.png")
+    test_time_period(datetime.timedelta(seconds=60*60*12), "5_12hour.png")
+    test_time_period(datetime.timedelta(seconds=60*60*24), "6_24hour.png")
+    test_time_period(datetime.timedelta(days=3), "7_3day.png")
+    test_time_period(datetime.timedelta(days=7), "8_7day.png")
+    test_time_period(datetime.timedelta(days=14), "9_14day.png")
+    test_time_period(datetime.timedelta(days=30), "10_30day.png")
+    test_time_period(datetime.timedelta(days=30*3), "11_3month.png")
+    test_time_period(datetime.timedelta(days=30*6), "12_6month.png")
+    test_time_period(datetime.timedelta(days=365), "13_1year.png")
+    test_time_period(datetime.timedelta(days=365*3), "14_3year.png")
+    test_time_period(datetime.timedelta(days=365*5), "15_5year.png")
+    test_time_period(datetime.timedelta(days=365*10), "16_10year.png")
+    test_time_period(datetime.timedelta(days=365*25), "17_25year.png")
+    test_time_period(datetime.timedelta(days=365*50), "18_50year.png")
+    test_time_period(datetime.timedelta(days=365*100), "19_100year.png")
+    test_time_period(datetime.timedelta(days=365*250), "20_250year.png")
+    test_time_period(datetime.timedelta(days=365*500), "21_500year.png")
+    test_time_period(datetime.timedelta(days=365*1000), "22_1000year.png")
+    test_time_period(datetime.timedelta(days=365*3000), "23_3000year.png")
 
 test_all()
