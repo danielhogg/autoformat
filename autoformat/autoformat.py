@@ -14,7 +14,12 @@ def scale(start_date, end_date):
     total_seconds = dynamic_range.total_seconds()
     total_hours = total_seconds / 3600
 
-    fig, ax = plt.subplots()
+
+    # Getting current figure handle
+    fig = plt.gcf()
+
+    # Getting current axis handle
+    ax = plt.gca()
 
     majorLoc = mdates.AutoDateLocator()
     minorFormat = None
