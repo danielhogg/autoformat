@@ -1,25 +1,3 @@
-# autoformat
-Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.
-
-This package is supported for Python 3 only. This project works for time ranges on the order of milliseconds or millenia, and produces a decent-looking result with a few lines:
-
-```python
-from autoformat import autoformat
-
-autoformat.scale(start_date, end_date)
-# your matplotlib plotting code here
-
-```
-
-## Installation
-
-```
-pip install autoformat 
-```
-
-## Worked example
-
-```python
 import math
 import datetime
 import matplotlib.pyplot as plt
@@ -45,6 +23,3 @@ def plot(filename):
     plt.close()
 
 plot("sample.png")
-```
-
-![](examples/sample.png?raw=true)

@@ -4,12 +4,29 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+long_descrption = """# autoformat
+Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.
+
+This package is supported for Python 3 only. This project works for time ranges on the order of milliseconds or millenia, and produces a decent-looking result with a few lines:
+
+```python
+from autoformat import autoformat
+
+autoformat.scale(start_date, end_date)
+# your matplotlib plotting code here
+
+```
+
+## Installation
+
+```
+pip install autoformat 
+```
+"""
 
 setup(
     name='autoformat',
-    version='1.0.0',
+    version='1.1.0',
     description='Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.',  # Optional
     long_description=long_description,
     long_description_content_type='text/markdown',  # Optional (see note above)

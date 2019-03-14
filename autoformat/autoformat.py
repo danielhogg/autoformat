@@ -27,25 +27,42 @@ def scale(start_date, end_date):
     majorFormat = None
     xlabel = None
 
-    
-    if total_hours < 1:
-        pass
+    if total_seconds < 600:
+        majorFormat = mdates.DateFormatter("%M:%S")
+    elif total_seconds < 1200:
+        majorFormat = mdates.DateFormatter("%M")
+        majorLoc = mdates.MinuteLocator()
+    elif total_seconds < 3600:
+        majorFormat = mdates.DateFormatter("%M")
     elif total_hours < 6:
         majorFormat = mdates.DateFormatter("%H:%M")
     elif total_hours < 12:
         majorFormat = mdates.DateFormatter("%Hh")
-    elif total_hours <= 24 * 7:
-        majorFormat = mdates.DateFormatter("%b %d")
-        minorFormat = mdates.DateFormatter("%H")
+    elif total_hours <= 24 * 5:
+        majorFormat = mdates.DateFormatter("%b %d  ")
+        minorFormat = mdates.DateFormatter("%Hh")
         minorLoc = majorLoc
         majorLoc = mdates.DayLocator()
         fig.autofmt_xdate()
-    elif total_hours < 24 * 7 * 4:
-        majorFormat = mdates.DateFormatter("%b %d")
+    elif total_hours < 24 * 10:
+        majorFormat = mdates.DateFormatter("%b %d  ")
         majorLoc = mdates.DayLocator()
         fig.autofmt_xdate()
-    else:
-        pass
+    elif total_hours < 24 * 7 * 6:
+        majorFormat = mdates.DateFormatter("%b %d")
+        fig.autofmt_xdate()
+    elif total_hours < 24 * 7 * 4 * 24:
+        majorFormat = mdates.DateFormatter("%Y  ")
+        majorLoc = mdates.YearLocator()
+        minorFormat = mdates.DateFormatter("%b")
+        minorLoc = mdates.MonthLocator()
+        fig.autofmt_xdate()
+    elif total_hours < 365 * 24 * 5:
+        minorFormat = mdates.DateFormatter("%b")
+        minorLoc = mdates.AutoDateLocator()
+        majorLoc = mdates.YearLocator()
+        majorFormat = mdates.DateFormatter("%Y   ")
+        fig.autofmt_xdate()
         # Currently out of scope
 
 

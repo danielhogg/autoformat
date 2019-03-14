@@ -1,10 +1,11 @@
 import math
 import datetime
 
+import pytest
 import matplotlib.pyplot as plt
 import numpy as np
 
-from autoformat import autoformat
+import autoformat
 
 
 class SampleData:
@@ -28,7 +29,8 @@ class SampleData:
 
         self.times = np.array(times_list)
 
-    def plot(self, filename):
+    def plot(self, filename, start, end):
+        autoformat.scale(start, end)
         plt.plot(self.times, self.data)
         plt.savefig(filename)
         plt.close()
@@ -49,9 +51,8 @@ def test_wrong_order():
 def test_time_period(time_span, filename):
     start = datetime.datetime(2015,12,10,12)
     end = start + time_span
-    autoformat.scale(start, end)
     sample = SampleData(start, end, 100)
-    sample.plot(filename)
+    sample.plot(filename, start, end)
 
 
 def test_all():
