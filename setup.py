@@ -4,7 +4,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-long_descrption = """# autoformat
+long_description = """# autoformat
 Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.
 
 This package is supported for Python 3 only. This project works for time ranges on the order of milliseconds or millenia, and produces a decent-looking result with a few lines:
@@ -22,15 +22,18 @@ autoformat.scale(start_date, end_date)
 ```
 pip install autoformat 
 ```
+
+Project [github link](https://github.com/danielhogg/autoformat)
+
 """
 
 setup(
     name='autoformat',
-    version='1.1.0',
-    description='Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.',  # Optional
+    version='1.0.0',
+    description='Automatic, range-aware formatting of time-axis labels for timeseries data using matplotlib.',
     long_description=long_description,
-    long_description_content_type='text/markdown',  # Optional (see note above)
-    url='https://github.com/danielhogg/autoformat',  # Optional
+    long_description_content_type='text/markdown',
+    url='https://github.com/danielhogg/autoformat',
     author='Daniel Hogg',
     author_email='danielhogg@protonmail.com',
     classifiers=[
@@ -40,8 +43,8 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
     ],
-    keywords='matplotlib timeseries',  # Optional
+    keywords='matplotlib timeseries datetime',
     packages=find_packages(exclude=['tests']),
     python_requires='>=3.5, <4',
-    install_requires=['matplotlib', 'numpy'],  # Optional
+    install_requires=['numpy', 'matplotlib'],
 )
